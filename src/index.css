@@ -1,0 +1,233 @@
+/* Basic Reset & Defaults */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* App Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #444;
+  padding-bottom: 1rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #eee; /* Lighter heading color */
+}
+
+.connect-button-container {
+  /* Styles for positioning if needed */
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Input Section */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: stretch; /* Make children take full width */
+  background-color: #2a2a2a; /* Slightly lighter background */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.input-section h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #ccc; /* Lighter subheading */
+}
+
+textarea {
+  width: 100%; /* Take full width */
+  padding: 0.8rem;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #333;
+  color: #eee;
+  font-size: 1rem;
+  resize: vertical; /* Allow vertical resizing */
+  box-sizing: border-box; /* Include padding and border in width */
+  min-height: 150px; /* Minimum height */
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #646cff;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+  color: #eee;
+}
+button:hover {
+  border-color: #646cff;
+  background-color: #3a3a3a;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+button:disabled {
+  background-color: #444;
+  color: #888;
+  cursor: not-allowed;
+  border-color: transparent;
+}
+
+
+/* Analysis Section */
+.analysis-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.analysis-section h2 {
+   color: #ccc;
+   border-bottom: 1px solid #444;
+   padding-bottom: 0.5rem;
+   margin-bottom: 1rem;
+}
+
+.analysis-card {
+  background-color: #2a2a2a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.analysis-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+  color: #aaa; /* Dimmer heading for cards */
+  border-bottom: 1px solid #383838;
+  padding-bottom: 0.4rem;
+}
+
+.analysis-card p,
+.analysis-card ul {
+  margin: 0;
+  color: #ddd; /* Lighter text for content */
+}
+
+.analysis-card ul {
+  padding-left: 1.5rem; /* Indent list items */
+}
+
+.analysis-card li {
+  margin-bottom: 0.5rem;
+}
+
+.raw-response pre {
+    white-space: pre-wrap; /* Wrap long lines */
+    word-wrap: break-word; /* Break words if necessary */
+    background-color: #1e1e1e; /* Darker background for code */
+    padding: 1rem;
+    border-radius: 4px;
+    color: #ccc;
+    max-height: 300px; /* Limit height and add scroll */
+    overflow-y: auto;
+}
+
+
+/* Utility Classes */
+.error-message {
+  color: #ff6b6b; /* Red for errors */
+  background-color: rgba(255, 107, 107, 0.1); /* Light red background */
+  padding: 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #ff6b6b;
+  margin-top: 1rem;
+}
+
+.loading-indicator {
+  margin-top: 1rem;
+  font-style: italic;
+  color: #aaa;
+}
+
+/* Dark Mode Preferences */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+    color: #213547;
+  }
+   button:hover {
+    background-color: #e9e9e9;
+  }
+   button:disabled {
+    background-color: #e0e0e0;
+    color: #a0a0a0;
+  }
+  header h1 { color: #333; }
+  .input-section { background-color: #f0f0f0; }
+  .input-section h2 { color: #555; }
+  textarea { background-color: #fff; color: #333; border-color: #ccc; }
+  textarea:focus { border-color: #747bff; }
+  .analysis-section h2 { color: #555; border-bottom-color: #ddd;}
+  .analysis-card { background-color: #f9f9f9; }
+  .analysis-card h3 { color: #666; border-bottom-color: #eee;}
+  .analysis-card p, .analysis-card ul { color: #444; }
+  .raw-response pre { background-color: #eee; color: #333; }
+  .error-message { color: #c0392b; background-color: rgba(192, 57, 43, 0.1); border-color: #c0392b; }
+  .loading-indicator { color: #777; }
+}
